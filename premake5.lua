@@ -1,5 +1,5 @@
 workspace "Deformation"
-	architecture "x64"
+	architecture "x86"
 	
 	startproject "Local"
 
@@ -14,14 +14,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --include directories relative to root folder(solution direction)
 IncludeDir = {}
---IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
+--IncludeDir["Eigen"] = "Local/vendor/Eigen"
 
 
---group "Dependencies"
---	include "Hazel/vendor/GLFW"
---	include "Hazel/vendor/Glad"
---	include "Hazel/vendor/imgui"
---group ""
+group "Dependencies"
+	
+group ""
 
 
 
@@ -40,8 +38,11 @@ project "Local"
 
 	files
 	{
-		--"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/Eigen/*",
+		"%{prj.name}/vendor/glut/**.h"
+	
 
 	}
 
@@ -53,16 +54,22 @@ project "Local"
 	includedirs
 	{
 		"%{prj.name}/src",
+		"%{prj.name}/vendor",
+		"%{prj.name}/vendor/Eigen",
+		"%{prj.name}/vendor/gl",
+		"%{prj.name}/vendor/gl/glut"
 		
-	
 	}
 
 
+	libdirs { 
+		"%{prj.name}/vendor/gl/glut" 
+	}
 
 	links
 	{
-		--"GLFW",
-	
+	"glut32.lib",
+	"glut32.dll"
 	}
 
 	filter "system:windows"
