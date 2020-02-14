@@ -15,6 +15,7 @@
 // Thanks to: Miguel Gomez, Stan Melax, Pete Isensee, 
 //   Gabor Nagy, Scott Bilas, James Boer, Eric Lengyel
 //==========================================================
+
 #include "mtxlib.h"
 #include <cmath>
 #include <cassert>

@@ -1,5 +1,4 @@
-#include <iostream>
-
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -7,11 +6,8 @@
 #include <numeric>
 #include <iostream>
 #include <Windows.h>
-
 #include <gl/GL.h>
-
 #include <glut/glut.h>
-
 #include <gl/glm/glm.h>
 
 #include "mtxlib.h"
@@ -19,7 +15,15 @@
 
 
 
-#include "Eigen/Dense"
+
+using namespace std;
+
+
+
+
+
+
+
 
 
 int main()

@@ -75,6 +75,7 @@
  * */
 
 /* includes */
+
 #include <math.h>
 #include <assert.h>
 #include <gl/glut/glut.h>

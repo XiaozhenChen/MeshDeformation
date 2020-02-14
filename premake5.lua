@@ -41,7 +41,9 @@ project "Local"
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/Eigen/*",
-		"%{prj.name}/vendor/glut/**.h"
+		"%{prj.name}/vendor/glut/**.h",
+		"%{prj.name}/vendor/Lib/Taucs/**.h",
+		"%{prj.name}/vendor/Lib/CSparse/Include/**.h"
 	
 
 	}
@@ -57,19 +59,27 @@ project "Local"
 		"%{prj.name}/vendor",
 		"%{prj.name}/vendor/Eigen",
 		"%{prj.name}/vendor/gl",
-		"%{prj.name}/vendor/gl/glut"
+		"%{prj.name}/vendor/gl/glut",
+		"%{prj.name}/vendor/Lib",
+		"%{prj.name}/vendor/Lib/Taucs/",
+		"%{prj.name}/vendor/Lib/CSparse/Include",
+		"%{prj.name}/vendor/Lib/CSparse/lib"
 		
 	}
 
 
 	libdirs { 
-		"%{prj.name}/vendor/gl/glut" 
+		"%{prj.name}/vendor/gl/glut",
+		"%{prj.name}/vendor/Lib/CSparse/lib",
+		"%{prj.name}/vendor/Lib/Taucs"
 	}
 
 	links
 	{
 	"glut32.lib",
-	"glut32.dll"
+	"glut32.dll",
+	"CSparse08.lib",
+	"libtaucs.lib"
 	}
 
 	filter "system:windows"
